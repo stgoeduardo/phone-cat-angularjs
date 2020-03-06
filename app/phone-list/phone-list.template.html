@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Search: <input ng-model="$ctrl.query">
+            </p>
+            <p>
+                Order by:
+                <select ng-model="$ctrl.orderProp">
+                    <option value="name">Name</option>
+                    <option value="age">Age</option>
+                </select>
+            </p>
+        </div>
+
+        <div class="col-md-10">
+            <ul>
+                <!-- usando filter een el ng-repeat...nos sirve para filtrar los datos de una lista en este caso,
+                coonsiderar que debe de estar ligado a un modelo que es la bisqueda...en este caso es ng-model="query", del input de arriba
+                es el enlace entre los datos, y es un pipe (transformacion de algo, en este caso de datos..y para este caso descarta las que no tenga coincidencias) al final de cuenta -->
+                <li ng-repeat='p in $ctrl.phones | filter: $ctrl.query | orderBy: $ctrl.orderProp' class="thumbnail">
+                    <!--span>{{ p.name }}</span>
+                    <p>{{ p.snippet }}</p-->
+                    <!-- step - 8 -->
+                    <a href="#!/phones/{{ p.id }}" class="thumb">
+                        <img ng-src="{{ p.imageUrl }}" alt="{{ p.name }}">
+                    </a>
+                    <a href="#!/phones/{{ p.id }}">{{ p.name }}</a>
+                    <p>
+                        {{ p.snippet }}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

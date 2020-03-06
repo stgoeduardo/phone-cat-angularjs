@@ -1,0 +1,1 @@
+var coreApp = angular.module('core', ['core.phone']);

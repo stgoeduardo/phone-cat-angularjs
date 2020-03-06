@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- ng-app: The ng-app attribute represents an AngularJS directive, named ngApp (AngularJS uses kebab-case for its custom attributes and camelCase for the corresponding directives which implement them). This directive is used to flag the HTML element that AngularJS should consider to be the root element of our application. This gives application developers the freedom to tell AngularJS if the entire HTML page or only a portion of it should be treated as the AngularJS application. -->
+<html ng-app="phonecatApp"> <!-- step-2: ng-app="phonecatApp" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Cat</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <!-- step - 0,1,2,3
+    script src="app.js"></script>
+    <script src="phone-list.component.js"></script-->
+    
+    <!-- step-4 -->
+    <script src="app.module.js"></script>
+    
+    <script src="app.config.js"></script>
+
+    <script src="phone-list/phone-list.module.js"></script>
+    <script src="phone-list/phone-list.component.js"></script>
+
+    <script src="phone-detail/phone-detail.module.js"></script>
+    <script src="phone-detail/phone-detail.component.js"></script>
+    
+    <script src="core/core.module.js"></script>
+    <script src="core/checkmark/checkmark.filter.js"></script>
+    
+    <script src="core/phone/phone.module.js"></script>
+    <script src="core/phone/phone.service.js"></script>
+</head>
+<!-- body ng-controller="PhoneListController"--> <!-- step-2: ng-controller="..." -->
+<body>
+    <div ng-view></div>
+    <!-- step-3 y 4: components: nuestro componente es reusable -->
+    <!-- phone-list></phone-list-->
+    <!-- step-3 y 4 -->
+    
+    <!-- step-0 -->
+    <!--h3>Hola Mundo! {{ 'yet' + '!' }}</h3>
+    <p> 1 + 2 = {{ 1 + 2 }} </p-->
+    <!-- step-0 -->
+
+    <!-- step-1 -->
+    <!-- p>Total number of phones: 2</p>
+    <ul>
+        <li>
+            <span>Nexus S</span>
+            <p>
+                Fast just got faster with Nexus S.
+            </p>
+        </li>
+        <li>
+            <span>Motorola XOOM™ with Wi-Fi</span>
+            <p>
+                The Next, Next Generation tablet.
+            </p>
+        </li>
+    </ul-->
+    <!-- step-1 -->
+
+    <!-- step-2 -->
+    <!-- ul>
+        <li ng-repeat="p in phones">
+            <span>{{ p.name }}</span>
+            <p>{{ p.snippet }}</p>
+        </li>
+    </ul-->
+    <!-- step-2 -->
+
+</body>
+</html>
